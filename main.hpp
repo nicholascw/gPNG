@@ -20,7 +20,7 @@ const char* usage="Usage: gPNG [p2g | g2p] [file]\n"
                   "    -h, --help     Show this help information.\n\n"
                   "Example:\n"
                   "    echo \"something\" | gpg -se -r [key] --sign-with [key] --armor | gPNG g2p out.png\n"
-                  "    gpg <(gPNG p2g in.png)\n\n";
+                  "    gpg <(gPNG p2g in.png)\n\n"
                   "Notice:\n"
                   "    The current version scheme recommends the --armor option in gpg, "
                   "since the length is not stored in the image output.\n";
