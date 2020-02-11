@@ -10,7 +10,7 @@ png++
 
 ### Compile
 
-> If you are Archlinux user, try out AUR/gPNG.
+> If you are Archlinux user, try out AUR/gpng-git.
 
 ```bash
 cmake .
