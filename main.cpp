@@ -5,7 +5,7 @@
 #include <iostream>
 #include <png++/image.hpp>
 #include <png++/rgb_pixel.hpp>
-#include "buildinfo.h"
+#include "main.hpp"
 
 using std::string, std::cout, std::cin, std::endl, std::cerr;
 
