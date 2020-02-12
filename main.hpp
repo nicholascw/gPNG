@@ -10,7 +10,7 @@ const char* license="Copyright (C) 2020 Nicholas Wang <me@nicho1as.wang>\n"
                     "This is free software: you are free to change and redistribute it.\n"
                     "There is NO WARRANTY, to the extent permitted by law.\n\n";
 
-const char* ver="0.1";
+const char* ver="0.1.1";
 
 const char* usage="Usage: gpng [p2g | g2p] [file]\n"
                   "    If output file not set, will output in stdout\n"

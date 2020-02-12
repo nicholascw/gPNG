@@ -36,6 +36,7 @@ void g2p(char *out) {
     freopen(nullptr, "rb", stdin);
     size_t buf_size = 256, count = 0;
     auto *buf = (png::byte *) calloc(sizeof(png::byte), buf_size);
+    bool armor_detect = true;
     do {
         buf[count++] = getc(stdin);
         if(count > buf_size) {
@@ -48,8 +49,9 @@ void g2p(char *out) {
             }
             buf_size = buf_size * 2;
         }
-    } while(buf[count - 1] != 0xff); // 0xff==EOF in unsigned char
-    buf[count - 1] = 0x00;
+        if(armor_detect && (buf[count-1] & 0x80)) armor_detect=false; // in extended ascii
+    } while(!feof(stdin)); // 0xff==EOF in unsigned char
+    buf[count - 1] = 0x00; // erase the 0xff EOF mark
     count += 3 - (count % 3 ? count % 3 : 3);
     png::uint_32 img_side = std::ceil(std::sqrt(count / 3));
     png::image<png::rgb_pixel> canvas(img_side * 4, img_side * 4);
